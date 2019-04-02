@@ -9,15 +9,12 @@ public class MainController {
 
     @GetMapping("/")
     public String home(){
-        return "user/index";
+        return "main/index";
     }
 
     @GetMapping("/contact")
     public String contact(){
         return "contact";
     }
-
-
-
 
 }

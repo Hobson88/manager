@@ -20,9 +20,11 @@ public class Dish {
     private String name;
 
 //    private Set<String> food_tags;
-
     @Type(type="text")
     private String recipe;
+
+    //domyślna gramatura serwowanej porcji
+    private int default_serving;
 
     //klucz
     @ManyToMany
@@ -30,14 +32,5 @@ public class Dish {
             name = "dish_ingrediens",                                 // nawa tabelki N:M
             joinColumns = @JoinColumn(name = "dish_id"),              // nazwa kolumny 1
             inverseJoinColumns = @JoinColumn(name = "article_id"))    // nazwa kolumny 2
-    private Set<Article> ingredients;                                 // list of ingredients in dish
-
-
-
-
-
-
-
-
-
+    private Set<Article> ingredients = new HashSet<>();               // list of ingredients in dish
 }
